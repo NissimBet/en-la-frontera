@@ -1,0 +1,39 @@
+{
+  "name": "en-la-frontera",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NissimBet/en-la-frontera.git"
+  },
+  "keywords": [
+    "react",
+    "js",
+    "ts",
+    "html",
+    "css"
+  ],
+  "author": "nissim betesh, gabriel turriza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NissimBet/en-la-frontera/issues"
+  },
+  "homepage": "https://github.com/NissimBet/en-la-frontera#readme",
+  "dependencies": {
+    "next": "^9.2.2",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^13.7.7",
+    "@types/react": "^16.9.23",
+    "typescript": "^3.8.3"
+  }
+}

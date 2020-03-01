@@ -6,7 +6,6 @@ export default () => {
   const router = useRouter();
   return (
     <div>
-      <Link href="/">home</Link>
       <h1>{router.query.id}</h1>
     </div>
   );

@@ -5,6 +5,10 @@ import styled from "styled-components";
 const StyledLink = styled.a`
   color: black;
   text-decoration: none;
+
+  &:hover {
+    text-decoration: underline black;
+  }
 `;
 
 interface CustomLinkParams {
@@ -24,8 +28,8 @@ const CustomLink: React.FunctionComponent<CustomLinkParams> = ({
   }
 
   return (
-    <Link href={to}>
-      <StyledLink href={to}>{children}</StyledLink>
+    <Link href={to} passHref>
+      <StyledLink>{children}</StyledLink>
     </Link>
   );
 };

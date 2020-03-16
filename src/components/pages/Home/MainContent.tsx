@@ -1,10 +1,12 @@
 import React from "react";
-import StreamContainer from "../../StreamPlayer";
-import TopNews, { TopNewsInterface } from "./../../News/Top";
 import styled from "styled-components";
-import NewsSlider from "./../../News/NewsSlider";
+
 import Ad from "../../Ads/Ads";
 import RecentNews from "../../News/RecentNews";
+import StreamContainer from "../../StreamPlayer";
+import TopNews, { TopNewsInterface } from "../../News/Top";
+import NewsSlider from "../../News/NewsSlider";
+
 const Container = styled.div`
   & > * {
     margin: 20px;

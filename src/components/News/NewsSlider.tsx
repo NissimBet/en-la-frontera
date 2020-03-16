@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import CustomLink from "../Link";
+
 interface NewsDataInterface {
   titulo: string;
   autor: string;
@@ -8,6 +9,7 @@ interface NewsDataInterface {
   imagen: string;
   descripcion: string;
 }
+
 interface ContainerInterface {
   image: string;
 }
@@ -23,6 +25,7 @@ const NewsContainer = styled.div<ContainerInterface>`
   background-position: center;
   background-image: ${({ image }) => `url(${image})`};
 `;
+
 const NewsTab: React.FunctionComponent<NewsDataInterface> = ({
   titulo,
   autor,
@@ -42,8 +45,8 @@ const NewsTab: React.FunctionComponent<NewsDataInterface> = ({
   );
 };
 
-const NewsSlider: React.FunctionComponent = () => {
-  const relevantnews: Array<NewsDataInterface> = [
+const NewsSlider: React.FunctionComponent = ({}) => {
+  const relevantNews: Array<NewsDataInterface> = [
     {
       titulo: "El rey de corazones",
       descripcion: "Ariel Camacho",
@@ -66,11 +69,12 @@ const NewsSlider: React.FunctionComponent = () => {
       imagen: "/assets/SpiderSignal.jpeg"
     }
   ];
+
   return (
     <div>
-      <h1>News Slider</h1>
+      <h1>Lo más relevante</h1>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
-        {relevantnews.map(data => (
+        {relevantNews.map(data => (
           <NewsTab key={data.id} {...data} />
         ))}
       </div>

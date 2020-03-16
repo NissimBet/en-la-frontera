@@ -5,6 +5,10 @@ import styled from "styled-components";
 const StyledLink = styled.a`
   color: black;
   text-decoration: none;
+
+  &:hover {
+    text-decoration: underline black;
+  }
 `;
 
 interface CustomLinkParams {

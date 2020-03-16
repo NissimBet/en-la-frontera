@@ -21,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
     
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, h5, h6, p {
     margin: 0;
   }
 
@@ -29,6 +29,12 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
+`;
+
+const Content = styled.div`
+  max-width: 1200px;
+  width: 100%;
+  margin: 10px auto;
 `;
 
 const GridLayout = styled.div`
@@ -49,7 +55,7 @@ export default ({ children }) => {
           <Header />
           <Navbar />
 
-          {children}
+          <Content>{children}</Content>
 
           <Footer />
         </GridLayout>

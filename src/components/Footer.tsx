@@ -81,16 +81,17 @@ export default () => {
 
         <div>
           <h3>Logo</h3>
-          <ul>
+          <LinkList>
             <li>
               <img
-                src="/assets/pollo.jpeg"
+                style={{ objectFit: "scale-down" }}
+                src="/assets/SpiderSignal.jpeg"
                 alt="Logo"
                 width={150}
                 height={150}
               />
             </li>
-          </ul>
+          </LinkList>
         </div>
       </Content>
     </Container>

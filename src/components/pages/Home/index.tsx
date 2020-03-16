@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import HomeMainContent from "./MainContent";
-import SecondContent from "./SecondContent";
+import SideContent from "./SideContent";
 
 const Container = styled.div`
   display: flex;
@@ -26,7 +26,7 @@ const HomePage: React.FunctionComponent = () => {
   return (
     <Container>
       <HomeMainContent />
-      <SecondContent />
+      <SideContent />
     </Container>
   );
 };

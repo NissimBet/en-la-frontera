@@ -31,7 +31,7 @@ const TextContainer = styled.div`
   border-radius: 25px;
 `;
 
-export interface TopNewsInterface {
+export interface DailyTopNewsInterface {
   titulo: string;
   descripcion: string;
   imagen: string;
@@ -39,7 +39,7 @@ export interface TopNewsInterface {
   id: number;
 }
 
-const TopNews: React.FunctionComponent<TopNewsInterface> = ({
+const DailyTopNews: React.FunctionComponent<DailyTopNewsInterface> = ({
   titulo,
   descripcion,
   imagen,
@@ -62,4 +62,4 @@ const TopNews: React.FunctionComponent<TopNewsInterface> = ({
   );
 };
 
-export default TopNews;
+export default DailyTopNews;

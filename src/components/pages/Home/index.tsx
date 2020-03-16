@@ -1,0 +1,34 @@
+import React from "react";
+import styled from "styled-components";
+import HomeMainContent from "./MainContent";
+import SideContent from "./SideContent";
+
+const Container = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  & > * {
+    border: 1px solid black;
+    border: 1px solid red;
+  }
+
+  & > *:first-child {
+    flex: 5;
+    margin-right: 10px;
+  }
+  & > *:nth-child(2) {
+    flex: 2;
+    margin-left: 10px;
+  }
+`;
+
+const HomePage: React.FunctionComponent = () => {
+  return (
+    <Container>
+      <HomeMainContent />
+      <SideContent />
+    </Container>
+  );
+};
+
+export default HomePage;

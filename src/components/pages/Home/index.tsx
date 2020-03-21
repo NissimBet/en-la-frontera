@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import HomeMainContent from "./MainContent";
 import SecondContent from "./SecondContent";
+import EstructuraNatural from "./../../News/EstructuraNews";
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
@@ -23,7 +24,7 @@ const Container = styled.div`
 const Homepage: React.FunctionComponent = () => {
   return (
     <Container>
-      <HomeMainContent />
+      <EstructuraNatural />
       <SecondContent />
     </Container>
   );

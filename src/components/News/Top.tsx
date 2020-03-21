@@ -8,6 +8,7 @@ export interface TopNewsInterface {
   autor: string;
   imagen: string;
   id: number;
+  link: string;
 }
 
 interface ContainerInterface {
@@ -38,7 +39,8 @@ const TopNews: React.FunctionComponent<TopNewsInterface> = ({
   descripcion,
   imagen,
   autor,
-  id
+  id,
+  link
 }) => {
   return (
     <Container>
@@ -50,7 +52,11 @@ const TopNews: React.FunctionComponent<TopNewsInterface> = ({
           <p>{descripcion}</p>
           <p>{autor}</p>
         </TextContainer>
-        <CustomLink to={`/news/${id}`}>Ver más</CustomLink>
+        <CustomLink
+          to={`https://stackoverflow.com/questions/45046030/maintaining-href-open-in-new-tab-with-an-onclick-handler-in-react`}
+        >
+          Ver más
+        </CustomLink>
       </NewsContainer>
     </Container>
   );

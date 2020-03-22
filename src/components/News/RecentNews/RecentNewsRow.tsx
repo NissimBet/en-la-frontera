@@ -13,7 +13,7 @@ interface RecentNewsData {
   descripcion: string;
   autor: string;
   imagen: string;
-  id: number;
+  id: string;
 }
 
 const RecentNewsRow: React.FunctionComponent<RecentNewsData> = ({

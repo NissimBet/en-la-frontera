@@ -5,7 +5,7 @@ import CustomLink from "../../Link";
 interface NewsDataInterface {
   titulo: string;
   autor: string;
-  id: number;
+  id: string;
   imagen: string;
   descripcion: string;
 }

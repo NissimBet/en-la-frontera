@@ -4,7 +4,7 @@ import NewsTab from "./SliderTab";
 export interface SliderNewsData {
   titulo: string;
   autor: string;
-  id: number;
+  id: string;
   imagen: string;
   descripcion: string;
 }

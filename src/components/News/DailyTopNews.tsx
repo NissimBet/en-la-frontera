@@ -36,7 +36,7 @@ export interface DailyTopNewsInterface {
   descripcion: string;
   autor: string;
   imagen: string;
-  id: number;
+  id: string;
 }
 
 const DailyTopNews: React.FunctionComponent<DailyTopNewsInterface> = ({

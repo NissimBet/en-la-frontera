@@ -17,13 +17,12 @@ interface NewsArticleDataProps {
 const NewsArticlePage: NextPage<NewsArticleDataProps> = props => {
   const { articleId, sectionName } = props;
   const [articleData, setArticleData] = useState<NewsArticleData>(null);
-  const router = useRouter();
 
   useEffect(() => {
     getSectionArticleWithId(sectionName, articleId).then(data => {
       setArticleData(data);
     });
-  }, [articleId, sectionName]);
+  }, []);
 
   console.log(articleData);
   return (

@@ -23,14 +23,16 @@ async function getData(): Promise<HomePageProps> {
         section: article.section
       }))
     ],
-    topArticle: {
-      autor: topArticle.author,
-      descripcion: topArticle.content,
-      imagen: topArticle.previewImage,
-      id: topArticle.id,
-      titulo: topArticle.title,
-      section: topArticle.section
-    },
+    topArticle: topArticle
+      ? {
+          autor: topArticle.author,
+          descripcion: topArticle.content,
+          imagen: topArticle.previewImage,
+          id: topArticle.id,
+          titulo: topArticle.title,
+          section: topArticle.section
+        }
+      : null,
     relevantNews: [],
     topNews: [
       ...topArticles.map(article => ({

@@ -40,14 +40,16 @@ async function getData(section: string): Promise<NewsSectionPageProps> {
         section: article.section
       }))
     ],
-    topArticle: {
-      autor: topArticle.author,
-      descripcion: topArticle.content,
-      imagen: topArticle.previewImage,
-      id: topArticle.id,
-      titulo: topArticle.title,
-      section: topArticle.section
-    },
+    topArticle: topArticle
+      ? {
+          autor: topArticle.author,
+          descripcion: topArticle.content,
+          imagen: topArticle.previewImage,
+          id: topArticle.id,
+          titulo: topArticle.title,
+          section: topArticle.section
+        }
+      : null,
     relevantNews: [],
     sectionName: section,
     topNews: [
@@ -68,6 +70,7 @@ const NewsPages: NextPage<NewsPagesProps> = props => {
   useEffect(() => {
     getData(props.sectionLink).then(articles => setNews(articles));
   }, []);
+
   return (
     <React.Fragment>
       <Head>
@@ -91,6 +94,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const section = NoticiasUbicaciones.find(
     data => data.link === params.newsSectionName
   );
+
+  console.log(section);
 
   return {
     props: { sectionName: section.name, sectionLink: section.link }

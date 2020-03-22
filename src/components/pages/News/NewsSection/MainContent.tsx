@@ -19,7 +19,7 @@ const NewsSectionMainContent: React.FunctionComponent<NewsSectionMainContentProp
   return (
     <div>
       <h1>{sectionName}</h1>
-      <DailyTopNews {...topNews} />
+      {topNews && <DailyTopNews {...topNews} />}
       <RelevantNews relevantNews={relevantNews} />
     </div>
   );

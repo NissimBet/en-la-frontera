@@ -34,9 +34,10 @@ const TextContainer = styled.div`
 export interface DailyTopNewsInterface {
   titulo: string;
   descripcion: string;
-  imagen: string;
   autor: string;
+  imagen: string;
   id: number;
+  link: string;
 }
 
 const DailyTopNews: React.FunctionComponent<DailyTopNewsInterface> = ({
@@ -44,7 +45,8 @@ const DailyTopNews: React.FunctionComponent<DailyTopNewsInterface> = ({
   descripcion,
   imagen,
   autor,
-  id
+  id,
+  link
 }) => {
   return (
     <Container>
@@ -56,6 +58,7 @@ const DailyTopNews: React.FunctionComponent<DailyTopNewsInterface> = ({
           <p>{descripcion}</p>
           <p>{autor}</p>
         </TextContainer>
+        <CustomLink to={`/News/${link}`}>Ver más</CustomLink>
       </NewsContainer>
       <CustomLink to={`/news/${id}`}>Ver mas ...</CustomLink>
     </Container>

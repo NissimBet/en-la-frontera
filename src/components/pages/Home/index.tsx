@@ -3,6 +3,7 @@ import styled from "styled-components";
 import HomeMainContent from "./MainContent";
 import SideContent from "./SideContent";
 
+import EstructuraNatural from "./../../News/EstructuraNews";
 const Container = styled.div`
   display: flex;
   justify-content: space-between;

@@ -27,14 +27,14 @@
   },
   "homepage": "https://github.com/NissimBet/en-la-frontera#readme",
   "dependencies": {
-    "next": "^9.2.2",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
+    "next": "^9.3.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "styled-components": "^5.0.1"
   },
   "devDependencies": {
-    "@types/node": "^13.7.7",
-    "@types/react": "^16.9.23",
+    "@types/node": "^13.9.2",
+    "@types/react": "^16.9.25",
     "@types/styled-components": "^5.0.1",
     "babel-plugin-styled-components": "^1.10.7",
     "typescript": "^3.8.3",

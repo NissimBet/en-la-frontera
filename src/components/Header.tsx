@@ -24,9 +24,9 @@ const Author = styled.span`
 export default () => {
   return (
     <Header>
-      <Title>En La Frontera</Title>
+      <Title>Miguel Turriza</Title>
       <p>
-        con <Author>Miguel Turriza</Author>
+        <Author>En La Frontera</Author>
       </p>
     </Header>
   );

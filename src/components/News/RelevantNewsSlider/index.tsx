@@ -1,13 +1,7 @@
 import React from "react";
-import NewsTab from "./SliderTab";
+import NewsTab, { NewsDataInterface } from "./SliderTab";
 
-export interface SliderNewsData {
-  titulo: string;
-  autor: string;
-  id: number;
-  imagen: string;
-  descripcion: string;
-}
+export type SliderNewsData = NewsDataInterface;
 
 interface NewsSliderProps {
   relevantNews: Array<SliderNewsData>;

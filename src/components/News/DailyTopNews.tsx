@@ -36,7 +36,8 @@ export interface DailyTopNewsInterface {
   descripcion: string;
   autor: string;
   imagen: string;
-  id: number;
+  section: string;
+  id: string;
 }
 
 const DailyTopNews: React.FunctionComponent<DailyTopNewsInterface> = ({
@@ -44,7 +45,8 @@ const DailyTopNews: React.FunctionComponent<DailyTopNewsInterface> = ({
   descripcion,
   imagen,
   autor,
-  id
+  id,
+  section
 }) => {
   return (
     <Container>
@@ -57,7 +59,7 @@ const DailyTopNews: React.FunctionComponent<DailyTopNewsInterface> = ({
           <p>{autor}</p>
         </TextContainer>
       </NewsContainer>
-      <CustomLink to={`/news/${id}`}>Ver mas ...</CustomLink>
+      <CustomLink to={`/noticia/${section}/${id}`}>Ver mas ...</CustomLink>
     </Container>
   );
 };

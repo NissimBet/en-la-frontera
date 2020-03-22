@@ -6,7 +6,8 @@ export interface TopNewsData {
   descripcion: string;
   autor: string;
   imagen: string;
-  id: number;
+  section: string;
+  id: string;
 }
 
 const TopNewsEntry: React.FunctionComponent<TopNewsData> = ({
@@ -14,7 +15,8 @@ const TopNewsEntry: React.FunctionComponent<TopNewsData> = ({
   descripcion,
   autor,
   imagen,
-  id
+  id,
+  section
 }) => {
   return (
     <div>
@@ -29,7 +31,7 @@ const TopNewsEntry: React.FunctionComponent<TopNewsData> = ({
         <h2>{titulo}</h2>
         <p>{descripcion}</p>
         <p>{autor}</p>
-        <CustomLink to={`/news/${id}`}>Ver más</CustomLink>
+        <CustomLink to={`/noticia/${section}/${id}`}>Ver más</CustomLink>
       </ul>
     </div>
   );

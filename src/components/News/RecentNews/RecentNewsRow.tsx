@@ -8,18 +8,20 @@ const LinkList = styled.ul`
   list-style: none;
 `;
 
-interface RecentNewsData {
+export interface RecentNewsData {
   titulo: string;
   descripcion: string;
   autor: string;
   imagen: string;
-  id: number;
+  id: string;
+  section: string;
 }
 
 const RecentNewsRow: React.FunctionComponent<RecentNewsData> = ({
   titulo,
   descripcion,
   autor,
+  section,
   imagen,
   id
 }) => {
@@ -27,7 +29,7 @@ const RecentNewsRow: React.FunctionComponent<RecentNewsData> = ({
     <LinkList>
       <img
         style={{ objectFit: "scale-down" }}
-        src="/assets/SpiderSignal.jpeg"
+        src={imagen}
         alt="Recent News"
         width={100}
         height={150}
@@ -36,7 +38,7 @@ const RecentNewsRow: React.FunctionComponent<RecentNewsData> = ({
         <h3>{titulo}</h3>
         <p>{descripcion}</p>
         <p>{autor}</p>
-        <CustomLink to={`/news/${id}`}>Ver más</CustomLink>
+        <CustomLink to={`/noticia/${section}/${id}`}>Ver más</CustomLink>
       </ul>
     </LinkList>
   );

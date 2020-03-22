@@ -1,9 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-import NewsSidebar from "./NewsSectionSidebar";
+import NewsSidebar, { TopNewsData } from "./NewsSectionSidebar";
 import NewsSectionMainContent from "./MainContent";
 import RecentNews, { RecentNewsData } from "../../../News/RecentNews";
+
+import { DailyTopNewsInterface } from "../../../News/DailyTopNews";
+import { SliderNewsData } from "../../../News/RelevantNewsSlider";
 
 const Container = styled.div`
   display: grid;
@@ -19,75 +22,27 @@ const BottomContent = styled.div`
 
 export interface NewsSectionPageProps {
   sectionName: string;
+  recentNews: Array<RecentNewsData>;
+  topArticle: DailyTopNewsInterface;
+  relevantNews: Array<SliderNewsData>;
+  topNews: Array<TopNewsData>;
 }
 
 const NewsSectionPage: React.FunctionComponent<NewsSectionPageProps> = ({
-  sectionName
+  sectionName,
+  recentNews,
+  topArticle,
+  topNews,
+  relevantNews
 }) => {
-  const recentNews: Array<RecentNewsData> = [
-    {
-      titulo: "Noticia 1",
-      descripcion:
-        "Google Noticias es un agregador y buscador de noticias automatizado que rastrea de forma constante la información de los principales medios de comunicación online. El sitio web de Google News, elaborado por Google, se actualiza cada 15 minutos y fue ",
-      autor: "Yo",
-      id: 1,
-      imagen: "/assets/SpiderSignal.jpeg"
-    },
-    {
-      titulo: "Noticia 2",
-      descripcion: "a lo mejor paso",
-      autor: "tu",
-      id: 2,
-      imagen: "/assets/SpiderSignal.jpeg"
-    },
-    {
-      titulo: "Noticia 3",
-      descripcion: "a lo mejor paso",
-      autor: "tu",
-      id: 3,
-      imagen: "/assets/SpiderSignal.jpeg"
-    },
-    {
-      titulo: "Noticia 4",
-      descripcion: "a lo mejor paso",
-      autor: "tu",
-      id: 3,
-      imagen: "/assets/SpiderSignal.jpeg"
-    },
-    {
-      titulo: "Noticia 5",
-      descripcion: "a lo mejor paso",
-      autor: "tu",
-      id: 3,
-      imagen: "/assets/SpiderSignal.jpeg"
-    },
-    {
-      titulo: "Noticia 6",
-      descripcion: "a lo mejor paso",
-      autor: "tu",
-      id: 3,
-      imagen: "/assets/SpiderSignal.jpeg"
-    },
-    {
-      titulo: "Noticia 7",
-      descripcion: "a lo mejor paso",
-      autor: "tu",
-      id: 3,
-      imagen: "/assets/SpiderSignal.jpeg"
-    },
-    {
-      titulo: "Noticia 8",
-      descripcion: "a lo mejor paso",
-      autor: "tu",
-      id: 3,
-      imagen: "/assets/SpiderSignal.jpeg"
-    }
-  ];
-
   return (
     <Container>
-      <NewsSectionMainContent />
-      <NewsSidebar />
+      <NewsSectionMainContent
+        sectionName={sectionName}
+        topNews={topArticle}
+        relevantNews={relevantNews}
+      />
+      <NewsSidebar topNews={topNews} />
       <BottomContent>
         <RecentNews recentNews={recentNews} />
       </BottomContent>

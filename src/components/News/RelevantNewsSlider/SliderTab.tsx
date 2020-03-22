@@ -2,12 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import CustomLink from "../../Link";
 
-interface NewsDataInterface {
+export interface NewsDataInterface {
   titulo: string;
   autor: string;
-  id: number;
+  id: string;
   imagen: string;
   descripcion: string;
+  section: string;
 }
 
 interface ContainerInterface {
@@ -31,7 +32,8 @@ const NewsTab: React.FunctionComponent<NewsDataInterface> = ({
   autor,
   descripcion,
   id,
-  imagen
+  imagen,
+  section
 }) => {
   return (
     <div>
@@ -39,7 +41,7 @@ const NewsTab: React.FunctionComponent<NewsDataInterface> = ({
         <h3>{titulo}</h3>
         <p>{descripcion}</p>
         <p>{autor}</p>
-        <CustomLink to={`/news/${id}`}>Ver más</CustomLink>
+        <CustomLink to={`/noticia/${section}/${id}`}>Ver más</CustomLink>
       </NewsContainer>
     </div>
   );

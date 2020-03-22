@@ -1,23 +1,45 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NextPage, GetStaticPaths, GetStaticProps } from "next";
 import { NoticiasUbicaciones } from "../../../src/utils/NewsPages";
 import Head from "next/head";
 import NewsArticle from "../../../src/components/pages/News/NewsArticle";
+import {
+  getSectionArticleWithId,
+  NewsArticleData
+} from "../../../src/utils/querySimulator";
+import { useRouter } from "next/router";
 
-interface NewsArticleData {
-  id: string;
-  title: string;
-  content: any;
+interface NewsArticleDataProps {
+  articleId: string;
+  sectionName: string;
 }
 
-const NewsArticlePage: NextPage<{ data: NewsArticleData }> = props => {
-  console.log(props);
+const NewsArticlePage: NextPage<NewsArticleDataProps> = props => {
+  const { articleId, sectionName } = props;
+  const [articleData, setArticleData] = useState<NewsArticleData>(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    getSectionArticleWithId(sectionName, articleId).then(data => {
+      setArticleData(data);
+    });
+  }, [articleId, sectionName]);
+
+  console.log(articleData);
   return (
     <React.Fragment>
       <Head>
-        <title>{props.data?.title || "titulo"}</title>
+        <title>{"titulo"}</title>
       </Head>
-      <NewsArticle />
+      {articleData && (
+        <NewsArticle
+          titulo={articleData.title}
+          fecha={new Date(articleData.date)}
+          author={articleData.author}
+          image={articleData.previewImage}
+          content={articleData.content}
+        />
+      )}
     </React.Fragment>
   );
 };
@@ -32,13 +54,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const data: NewsArticleData = {
-    content: "hi there",
-    id: "12",
-    title: "Titulo"
-  };
   return {
-    props: { data }
+    props: {
+      articleId: params.newsArticleId,
+      sectionName: params.newsSectionName
+    }
   };
 };
 

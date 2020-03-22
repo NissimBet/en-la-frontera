@@ -1,31 +1,17 @@
 import React from "react";
-import TopNews, { TopNewsData } from "../../../News/TopNews";
+import TopNews, {
+  TopNewsData as TopNewsDataInterface
+} from "../../../News/TopNews";
 
-const NewsSidebar: React.FunctionComponent = () => {
-  const topNews: Array<TopNewsData> = [
-    {
-      titulo: "Noticia",
-      descripcion: "Google Noticias es un agregador y buscador de noticias ...",
-      autor: "Yo",
-      id: 1,
-      imagen: "/assets/SpiderSignal.jpeg"
-    },
-    {
-      titulo: "Noticia",
-      descripcion: "Google Noticias es un agregador y buscador de noticias ...",
-      autor: "Yo",
-      id: 1,
-      imagen: "/assets/SpiderSignal.jpeg"
-    },
-    {
-      titulo: "Noticia",
-      descripcion: "Google Noticias es un agregador y buscador de noticias ...",
-      autor: "Yo",
-      id: 1,
-      imagen: "/assets/SpiderSignal.jpeg"
-    }
-  ];
+export type TopNewsData = TopNewsDataInterface;
 
+interface NewsSidebarProps {
+  topNews: Array<TopNewsDataInterface>;
+}
+
+const NewsSidebar: React.FunctionComponent<NewsSidebarProps> = ({
+  topNews
+}) => {
   return (
     <div>
       <TopNews topNews={topNews} />

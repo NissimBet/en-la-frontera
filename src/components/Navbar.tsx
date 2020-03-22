@@ -4,7 +4,13 @@ import styled from "styled-components";
 
 import { NoticiasUbicaciones } from "./../utils/NewsPages";
 
-const links = [{ name: "Inicio", link: "/" }, ...NoticiasUbicaciones];
+const links = [
+  { name: "Inicio", link: "/" },
+  ...NoticiasUbicaciones.map(data => ({
+    name: data.name,
+    link: `/noticia/${data.link}`
+  }))
+];
 
 const Container = styled.div`
   border-top: 1px solid black;

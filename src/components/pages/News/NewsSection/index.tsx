@@ -1,51 +1,29 @@
 import React from "react";
 import styled from "styled-components";
 
-import StreamContainer from "../../StreamPlayer";
-import RecentNews, { RecentNewsData } from "../../News/RecentNews";
-import DailyTopNews, { DailyTopNewsInterface } from "../../News/DailyTopNews";
-import RelevantNews, { SliderNewsData } from "../../News/RelevantNewsSlider";
-import Ad from "../../Ads/Ad";
+import NewsSidebar from "./NewsSectionSidebar";
+import NewsSectionMainContent from "./MainContent";
+import RecentNews, { RecentNewsData } from "../../../News/RecentNews";
 
 const Container = styled.div`
-  & > * {
-    margin: 20px;
-  }
+  display: grid;
+  grid-template-columns: 1fr minmax(200px, 400px);
+  grid-template-rows: auto auto;
+  grid-template-areas: "main side" "bot bot";
+  gap: 30px;
 `;
 
-const HomeMainContent: React.FunctionComponent = () => {
-  const TopNewsData: DailyTopNewsInterface = {
-    autor: "gabriel",
-    titulo: "titulo",
-    descripcion: "smn",
-    imagen: "/assets/SpiderSignal.jpeg",
-    id: 1
-  };
+const BottomContent = styled.div`
+  grid-area: bot;
+`;
 
-  const relevantNews: Array<SliderNewsData> = [
-    {
-      titulo: "El rey de corazones",
-      descripcion: "Ariel Camacho",
-      autor: "Smn karnal",
-      id: 1,
-      imagen: "/assets/SpiderSignal.jpeg"
-    },
-    {
-      titulo: "El rey de corazones",
-      descripcion: "Ariel Camacho",
-      autor: "Miguelin",
-      id: 2,
-      imagen: "/assets/SpiderSignal.jpeg"
-    },
-    {
-      titulo: "El rey de corazones",
-      descripcion: "Ariel Camacho",
-      autor: "Tu",
-      id: 3,
-      imagen: "/assets/SpiderSignal.jpeg"
-    }
-  ];
+export interface NewsSectionPageProps {
+  sectionName: string;
+}
 
+const NewsSectionPage: React.FunctionComponent<NewsSectionPageProps> = ({
+  sectionName
+}) => {
   const recentNews: Array<RecentNewsData> = [
     {
       titulo: "Noticia 1",
@@ -108,13 +86,13 @@ const HomeMainContent: React.FunctionComponent = () => {
 
   return (
     <Container>
-      <StreamContainer />
-      <DailyTopNews {...TopNewsData} />
-      <RelevantNews relevantNews={relevantNews} />
-      <Ad />
-      <RecentNews recentNews={recentNews} />
+      <NewsSectionMainContent />
+      <NewsSidebar />
+      <BottomContent>
+        <RecentNews recentNews={recentNews} />
+      </BottomContent>
     </Container>
   );
 };
 
-export default HomeMainContent;
+export default NewsSectionPage;

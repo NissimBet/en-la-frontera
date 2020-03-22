@@ -15,7 +15,7 @@ const NewsContent = styled.div`
   margin: 20px 0;
 `;
 
-const NewsInformationPage: React.FunctionComponent = () => {
+const NewsArticlePage: React.FunctionComponent = () => {
   return (
     <Container>
       <NewsContainer>
@@ -74,4 +74,4 @@ const NewsInformationPage: React.FunctionComponent = () => {
   );
 };
 
-export default NewsInformationPage;
+export default NewsArticlePage;

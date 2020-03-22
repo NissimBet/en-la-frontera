@@ -7,12 +7,12 @@ interface PaginaNoticia {
 }
 
 export const NoticiasUbicaciones: Array<PaginaNoticia> = [
-  { name: "Reynosa", link: "/noticia/reynosa" },
-  { name: "Nuevo Laredo", link: "/noticia/nuevo-laredo" },
-  { name: "Miguel Alemán", link: "/noticia/miguel-aleman" },
-  { name: "Río Bravo", link: "/noticia/rio-bravo" },
-  { name: "Matamoros", link: "/noticia/matamoros" },
-  { name: "Ciudad Victoria", link: "/noticia/ciudad-victoria" },
-  { name: "Tampico", link: "/noticia/tampico" },
-  { name: "Valle de Texas", link: "/noticia/valle-de-texas" }
+  { name: "Reynosa", link: "reynosa" },
+  { name: "Nuevo Laredo", link: "nuevo-laredo" },
+  { name: "Miguel Alemán", link: "miguel-aleman" },
+  { name: "Río Bravo", link: "rio-bravo" },
+  { name: "Matamoros", link: "matamoros" },
+  { name: "Ciudad Victoria", link: "ciudad-victoria" },
+  { name: "Tampico", link: "tampico" },
+  { name: "Valle de Texas", link: "valle-de-texas" }
 ];

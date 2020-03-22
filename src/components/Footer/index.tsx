@@ -57,7 +57,7 @@ export default () => {
 
         <CustomFooterColumn title="Logo">
           <FooterColumnItem>
-            <Image src="/assets/pollo.jpeg" alt="Logo" fit="contain" />
+            <Image src="/assets/SpiderSignal.jpeg" alt="Logo" fit="contain" />
           </FooterColumnItem>
           <FooterColumnLink to="me" name="link" />
         </CustomFooterColumn>

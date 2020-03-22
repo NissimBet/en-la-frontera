@@ -15,26 +15,37 @@ const NewsContent = styled.div`
   margin: 20px 0;
 `;
 
-const NewsArticlePage: React.FunctionComponent = () => {
+interface NewsArticlePageProps {
+  titulo: string;
+  fecha: Date;
+  author: string;
+  image: string;
+  content: string;
+}
+
+const NewsArticlePage: React.FunctionComponent<NewsArticlePageProps> = props => {
   return (
     <Container>
       <NewsContainer>
-        <h1>Titulo</h1>
+        <h1>{props.titulo}</h1>
         <InfoContainer>
-          <h4>Fecha: {new Date().toLocaleDateString()}</h4>
+          <h4>Fecha: {props.fecha.toLocaleDateString()}</h4>
 
-          <h4>By: Gabriel Turriza</h4>
+          <h4>By: {props.author}</h4>
           <h4>Share: Facebook</h4>
         </InfoContainer>
       </NewsContainer>
       <NewsContent>
         <img
           style={{ objectFit: "scale-down" }}
-          src="/assets/SpiderSignal.jpeg"
+          src={props.image}
           alt="News"
           width={500}
           height={200}
         />
+      </NewsContent>
+      <NewsContent>
+        <p>{props.content}</p>
       </NewsContent>
       <NewsContent>
         <p>

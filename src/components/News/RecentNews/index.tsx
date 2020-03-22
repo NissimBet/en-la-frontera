@@ -2,15 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import RecentNewsRow from "./RecentNewsRow";
 
-const Container = styled.div``;
+import { RecentNewsData as _RecentNewsData } from "./RecentNewsRow";
+export type RecentNewsData = _RecentNewsData;
 
-export interface RecentNewsData {
-  titulo: string;
-  descripcion: string;
-  autor: string;
-  imagen: string;
-  id: string;
-}
+const Container = styled.div``;
 
 interface RecentNewsProps {
   recentNews: Array<RecentNewsData>;

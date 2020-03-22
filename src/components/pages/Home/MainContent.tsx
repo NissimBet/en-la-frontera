@@ -19,7 +19,8 @@ const HomeMainContent: React.FunctionComponent = () => {
     titulo: "titulo",
     descripcion: "smn",
     imagen: "/assets/SpiderSignal.jpeg",
-    id: "1"
+    id: "1",
+    section: "reynosa"
   };
 
   const relevantNews: Array<SliderNewsData> = [
@@ -28,21 +29,24 @@ const HomeMainContent: React.FunctionComponent = () => {
       descripcion: "Ariel Camacho",
       autor: "Smn karnal",
       id: "1",
-      imagen: "/assets/SpiderSignal.jpeg"
+      imagen: "/assets/SpiderSignal.jpeg",
+      section: "reynosa"
     },
     {
       titulo: "El rey de corazones",
       descripcion: "Ariel Camacho",
       autor: "Miguelin",
       id: "2",
-      imagen: "/assets/SpiderSignal.jpeg"
+      imagen: "/assets/SpiderSignal.jpeg",
+      section: "reynosa"
     },
     {
       titulo: "El rey de corazones",
       descripcion: "Ariel Camacho",
       autor: "Tu",
       id: "3",
-      imagen: "/assets/SpiderSignal.jpeg"
+      imagen: "/assets/SpiderSignal.jpeg",
+      section: "reynosa"
     }
   ];
 
@@ -53,56 +57,64 @@ const HomeMainContent: React.FunctionComponent = () => {
         "Google Noticias es un agregador y buscador de noticias automatizado que rastrea de forma constante la información de los principales medios de comunicación online. El sitio web de Google News, elaborado por Google, se actualiza cada 15 minutos y fue ",
       autor: "Yo",
       id: "1",
-      imagen: "/assets/SpiderSignal.jpeg"
+      imagen: "/assets/SpiderSignal.jpeg",
+      section: "reynosa"
     },
     {
       titulo: "Noticia 2",
       descripcion: "a lo mejor paso",
       autor: "tu",
       id: "2",
-      imagen: "/assets/SpiderSignal.jpeg"
+      imagen: "/assets/SpiderSignal.jpeg",
+      section: "reynosa"
     },
     {
       titulo: "Noticia 3",
       descripcion: "a lo mejor paso",
       autor: "tu",
       id: "3",
-      imagen: "/assets/SpiderSignal.jpeg"
+      imagen: "/assets/SpiderSignal.jpeg",
+      section: "reynosa"
     },
     {
       titulo: "Noticia 4",
       descripcion: "a lo mejor paso",
       autor: "tu",
       id: "3",
-      imagen: "/assets/SpiderSignal.jpeg"
+      imagen: "/assets/SpiderSignal.jpeg",
+      section: "reynosa"
     },
     {
       titulo: "Noticia 5",
       descripcion: "a lo mejor paso",
       autor: "tu",
       id: "3",
-      imagen: "/assets/SpiderSignal.jpeg"
+      imagen: "/assets/SpiderSignal.jpeg",
+      section: "reynosa"
     },
     {
       titulo: "Noticia 6",
       descripcion: "a lo mejor paso",
       autor: "tu",
       id: "3",
-      imagen: "/assets/SpiderSignal.jpeg"
+      imagen: "/assets/SpiderSignal.jpeg",
+      section: "reynosa"
     },
     {
       titulo: "Noticia 7",
       descripcion: "a lo mejor paso",
       autor: "tu",
       id: "3",
-      imagen: "/assets/SpiderSignal.jpeg"
+      imagen: "/assets/SpiderSignal.jpeg",
+      section: "reynosa"
     },
     {
       titulo: "Noticia 8",
       descripcion: "a lo mejor paso",
       autor: "tu",
       id: "3",
-      imagen: "/assets/SpiderSignal.jpeg"
+      imagen: "/assets/SpiderSignal.jpeg",
+      section: "reynosa"
     }
   ];
 

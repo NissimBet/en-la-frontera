@@ -13,22 +13,25 @@ const SideContent: React.FunctionComponent = () => {
       titulo: "Noticia",
       descripcion: "Google Noticias es un agregador y buscador de noticias ...",
       autor: "Yo",
-      id: 1,
-      imagen: "/assets/SpiderSignal.jpeg"
+      id: "1",
+      imagen: "/assets/SpiderSignal.jpeg",
+      section: "reynosa"
     },
     {
       titulo: "Noticia",
       descripcion: "Google Noticias es un agregador y buscador de noticias ...",
       autor: "Yo",
-      id: 1,
-      imagen: "/assets/SpiderSignal.jpeg"
+      id: "1",
+      imagen: "/assets/SpiderSignal.jpeg",
+      section: "reynosa"
     },
     {
       titulo: "Noticia",
       descripcion: "Google Noticias es un agregador y buscador de noticias ...",
       autor: "Yo",
-      id: 1,
-      imagen: "/assets/SpiderSignal.jpeg"
+      id: "1",
+      imagen: "/assets/SpiderSignal.jpeg",
+      section: "reynosa"
     }
   ];
 

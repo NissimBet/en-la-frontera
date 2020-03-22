@@ -1,40 +1,41 @@
 import React from "react";
 import styled from "styled-components";
 
-const NewsContent = styled.div`
-  margin: 20px 30px;
-`;
-const NewsContainer = styled.div`
-  margin-left: 20px;
-`;
+const Container = styled.div``;
+
+const NewsContainer = styled.div``;
+
 const InfoContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 400px;
+  max-width: 400px;
 `;
-const InfoContent = styled.div`
-  display: flex;
-  justify-content: space-evenly;
+
+const NewsContent = styled.div`
+  margin: 20px 0;
 `;
-const NoticiaNueva: React.FunctionComponent = () => {
+
+const NewsInformationPage: React.FunctionComponent = () => {
   return (
-    <div>
+    <Container>
       <NewsContainer>
         <h1>Titulo</h1>
         <InfoContainer>
-          <h4>Fecha: Hoy</h4>
+          <h4>Fecha: {new Date().toLocaleDateString()}</h4>
 
           <h4>By: Gabriel Turriza</h4>
           <h4>Share: Facebook</h4>
         </InfoContainer>
       </NewsContainer>
-      <img
-        style={{ objectFit: "scale-down" }}
-        src="/assets/SpiderSignal.jpeg"
-        alt="News"
-        width={500}
-        height={200}
-      />
+      <NewsContent>
+        <img
+          style={{ objectFit: "scale-down" }}
+          src="/assets/SpiderSignal.jpeg"
+          alt="News"
+          width={500}
+          height={200}
+        />
+      </NewsContent>
       <NewsContent>
         <p>
           Un texto es una composición de signos codificados en un sistema de
@@ -43,7 +44,7 @@ const NoticiaNueva: React.FunctionComponent = () => {
           cifrado que, aunque no tienen sentido para cualquier persona, sí puede
           ser descifrado por su destinatario original. En otras palabras, un
           texto es un entramado de signos con una intención comunicativa que
-          adquiere sentido en determinado contexto.{" "}
+          adquiere sentido en determinado contexto.
         </p>
       </NewsContent>
       <NewsContent>
@@ -69,8 +70,8 @@ const NoticiaNueva: React.FunctionComponent = () => {
           oraciones agrupadas en párrafos que habla de un tema determinado.
         </p>
       </NewsContent>
-    </div>
+    </Container>
   );
 };
 
-export default NoticiaNueva;
+export default NewsInformationPage;

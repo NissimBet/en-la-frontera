@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import HomeMainContent from "./MainContent";
-import SideContent from "./SideContent";
+import HomeMainContent, { HomeMainContentProps } from "./MainContent";
+import SideContent, { SideContentProps } from "./SideContent";
 
 const Container = styled.div`
   display: flex;
@@ -22,11 +22,22 @@ const Container = styled.div`
   }
 `;
 
-const HomePage: React.FunctionComponent = () => {
+export interface HomePageProps extends HomeMainContentProps, SideContentProps {}
+
+const HomePage: React.FunctionComponent<HomePageProps> = ({
+  recentNews,
+  relevantNews,
+  topArticle,
+  topNews
+}) => {
   return (
     <Container>
-      <HomeMainContent />
-      <SideContent />
+      <HomeMainContent
+        recentNews={recentNews}
+        relevantNews={relevantNews}
+        topArticle={topArticle}
+      />
+      <SideContent topNews={topNews} />
     </Container>
   );
 };

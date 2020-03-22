@@ -13,8 +13,18 @@ const Container = styled.div`
   }
 `;
 
-const HomeMainContent: React.FunctionComponent = () => {
-  const TopNewsData: DailyTopNewsInterface = {
+export interface HomeMainContentProps {
+  topArticle: DailyTopNewsInterface;
+  relevantNews: Array<SliderNewsData>;
+  recentNews: Array<RecentNewsData>;
+}
+
+const HomeMainContent: React.FunctionComponent<HomeMainContentProps> = ({
+  topArticle,
+  relevantNews,
+  recentNews
+}) => {
+  /* const TopNewsData: DailyTopNewsInterface = {
     autor: "gabriel",
     titulo: "titulo",
     descripcion: "smn",
@@ -117,11 +127,11 @@ const HomeMainContent: React.FunctionComponent = () => {
       section: "reynosa"
     }
   ];
-
+ */
   return (
     <Container>
       <StreamContainer />
-      <DailyTopNews {...TopNewsData} />
+      <DailyTopNews {...topArticle} />
       <RelevantNews relevantNews={relevantNews} />
       <Ad />
       <RecentNews recentNews={recentNews} />

@@ -28,6 +28,7 @@ const NewsContainer = styled.div<ContainerInterface>`
   background-position: center;
   background-image: ${({ image }) => `url(${image})`};
 `;
+
 const TextContainer = styled.div`
   background-color: #fff7;
   padding: 20px;

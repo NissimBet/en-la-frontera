@@ -2,46 +2,49 @@ import React from "react";
 import styled from "styled-components";
 import CustomLink from "../Link";
 
-export interface TopNewsInterface {
-  titulo: string;
-  descripcion: string;
-  autor: string;
-  imagen: string;
-  id: number;
-  link: string;
-}
+const Container = styled.div``;
 
 interface ContainerInterface {
   image: string;
 }
 
-const Container = styled.div``;
-
 const NewsContainer = styled.div<ContainerInterface>`
-  height: 250px;
+  height: 350px;
 
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
+
+  background-image: ${({ image }) => `url(${image})`};
   background-size: 100%;
   background-repeat: no-repeat;
+  background-origin: 50%;
   background-position: center;
-  background-image: ${({ image }) => `url(${image})`};
 `;
 
 const TextContainer = styled.div`
   background-color: #fff7;
-  padding: 20px;
-  margin: 10px;
-  border-radius: 30px;
+
+  padding: 20px 10px;
+  margin: 20px;
+
+  border-radius: 25px;
 `;
-const TopNews: React.FunctionComponent<TopNewsInterface> = ({
+
+export interface DailyTopNewsInterface {
+  titulo: string;
+  descripcion: string;
+  autor: string;
+  imagen: string;
+  id: number;
+}
+
+const DailyTopNews: React.FunctionComponent<DailyTopNewsInterface> = ({
   titulo,
   descripcion,
   imagen,
   autor,
-  id,
-  link
+  id
 }) => {
   return (
     <Container>
@@ -53,9 +56,10 @@ const TopNews: React.FunctionComponent<TopNewsInterface> = ({
           <p>{descripcion}</p>
           <p>{autor}</p>
         </TextContainer>
-        <CustomLink to={`/News/${link}`}>Ver más</CustomLink>
       </NewsContainer>
+      <CustomLink to={`/news/${id}`}>Ver mas ...</CustomLink>
     </Container>
   );
 };
-export default TopNews;
+
+export default DailyTopNews;

@@ -6,11 +6,13 @@ interface PlayerInterface {
 }
 
 const Player = styled.div<PlayerInterface>`
-  width: 500px;
-  transition: height 1s ease;
+  transition: height 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   height: ${({ isOpen }) => (isOpen ? "300px" : "0px")};
+  width: 100%;
+
   overflow: hidden;
-  background-color: royalblue;
+
+  background-color: #4447;
 `;
 
 const StreamPlayer: React.FunctionComponent<PlayerInterface> = ({ isOpen }) => {

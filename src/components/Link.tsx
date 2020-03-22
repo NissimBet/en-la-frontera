@@ -28,8 +28,8 @@ const CustomLink: React.FunctionComponent<CustomLinkParams> = ({
   }
 
   return (
-    <Link href={to}>
-      <StyledLink href={to}>{children}</StyledLink>
+    <Link href={to} passHref>
+      <StyledLink>{children}</StyledLink>
     </Link>
   );
 };

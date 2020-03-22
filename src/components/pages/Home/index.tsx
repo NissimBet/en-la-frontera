@@ -1,14 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import HomeMainContent from "./MainContent";
-import SecondContent from "./SecondContent";
-import EstructuraNatural from "./../../News/EstructuraNews";
+import SideContent from "./SideContent";
+
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
 
   & > * {
     border: 1px solid black;
+    border: 1px solid red;
   }
 
   & > *:first-child {
@@ -21,13 +22,13 @@ const Container = styled.div`
   }
 `;
 
-const Homepage: React.FunctionComponent = () => {
+const HomePage: React.FunctionComponent = () => {
   return (
     <Container>
       <HomeMainContent />
-      <SecondContent />
+      <SideContent />
     </Container>
   );
 };
 
-export default Homepage;
+export default HomePage;

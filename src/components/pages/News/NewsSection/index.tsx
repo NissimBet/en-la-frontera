@@ -1,61 +1,30 @@
 import React from "react";
 import styled from "styled-components";
-import CustomLink from "../Link";
 
-interface ReceNewsInterface {
-  titulo: string;
-  descripcion: string;
-  autor: string;
-  imagen: string;
-  id: number;
-}
-interface ContainerInterface {
-  image: string;
-}
-const Container = styled.div``;
+import NewsSidebar from "./NewsSectionSidebar";
+import NewsSectionMainContent from "./MainContent";
+import RecentNews, { RecentNewsData } from "../../../News/RecentNews";
 
-const RecentNewsContainer = styled.div<ContainerInterface>`
-  height: 10px;
-  justify-content: flex-end;
-  flex-direction: column;
-  display: "flex-direction-column";
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
+const Container = styled.div`
+  display: grid;
+  grid-template-columns: 1fr minmax(200px, 400px);
+  grid-template-rows: auto auto;
+  grid-template-areas: "main side" "bot bot";
+  gap: 30px;
 `;
-const LinkList = styled.ul`
-  display: flex;
 
-  list-style: none;
+const BottomContent = styled.div`
+  grid-area: bot;
 `;
-const NewNews: React.FunctionComponent<ReceNewsInterface> = ({
-  titulo,
-  descripcion,
-  autor,
-  imagen,
-  id
+
+export interface NewsSectionPageProps {
+  sectionName: string;
+}
+
+const NewsSectionPage: React.FunctionComponent<NewsSectionPageProps> = ({
+  sectionName
 }) => {
-  return (
-    <LinkList>
-      <img
-        style={{ objectFit: "scale-down" }}
-        src="/assets/SpiderSignal.jpeg"
-        alt="Recent News"
-        width={100}
-        height={150}
-      />
-      <ul>
-        <h3>{titulo}</h3>
-        <p>{descripcion}</p>
-        <p>{autor}</p>
-        <CustomLink to={`/news/${id}`}>Ver más</CustomLink>
-      </ul>
-    </LinkList>
-  );
-};
-
-const RecentNews: React.FunctionComponent = () => {
-  const relevantNews: Array<ReceNewsInterface> = [
+  const recentNews: Array<RecentNewsData> = [
     {
       titulo: "Noticia 1",
       descripcion:
@@ -114,15 +83,16 @@ const RecentNews: React.FunctionComponent = () => {
       imagen: "/assets/SpiderSignal.jpeg"
     }
   ];
+
   return (
     <Container>
-      <h2>Noticias Recientes</h2>
-      <div>
-        {relevantNews.map(data => (
-          <NewNews key={data.id} {...data} />
-        ))}
-      </div>
+      <NewsSectionMainContent />
+      <NewsSidebar />
+      <BottomContent>
+        <RecentNews recentNews={recentNews} />
+      </BottomContent>
     </Container>
   );
 };
-export default RecentNews;
+
+export default NewsSectionPage;

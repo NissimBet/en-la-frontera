@@ -2,16 +2,14 @@ import React from "react";
 import Link from "./Link";
 import styled from "styled-components";
 
+import { NoticiasUbicaciones } from "./../utils/NewsPages";
+
 const links = [
-  { name: "Inicio", to: "/" },
-  { name: "Reynosa", to: "/reynosa" },
-  { name: "Nuevo Laredo", to: "/nuevo-laredo" },
-  { name: "Miguel Alemán", to: "/miguel-aleman" },
-  { name: "Río Bravo", to: "/rio-bravo" },
-  { name: "Matamoros", to: "/matamoros" },
-  { name: "Ciudad Victoria", to: "/ciudad-victoria" },
-  { name: "Tampico", to: "/tampico" },
-  { name: "Valle de Texas", to: "/valle-de-texas" }
+  { name: "Inicio", link: "/" },
+  ...NoticiasUbicaciones.map(data => ({
+    name: data.name,
+    link: `/noticia/${data.link}`
+  }))
 ];
 
 const Container = styled.div`
@@ -37,7 +35,7 @@ export default () => {
       <LinkList>
         {links.map(value => (
           <li key={value.name}>
-            <Link to={value.to}>{value.name}</Link>
+            <Link to={value.link}>{value.name}</Link>
           </li>
         ))}
       </LinkList>

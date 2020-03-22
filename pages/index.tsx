@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import Homepage from "../src/components/pages/Home";
+import HomePage from "../src/components/pages/Home";
 
 export default () => {
   return (
@@ -8,7 +8,8 @@ export default () => {
       <Head>
         <title>En la frontera</title>
       </Head>
-      <Homepage />
+
+      <HomePage />
     </React.Fragment>
   );
 };

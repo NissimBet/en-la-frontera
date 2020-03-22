@@ -24,7 +24,7 @@ const Container = styled.div`
 const Homepage: React.FunctionComponent = () => {
   return (
     <Container>
-      <EstructuraNatural />
+      <HomeMainContent />
       <SecondContent />
     </Container>
   );

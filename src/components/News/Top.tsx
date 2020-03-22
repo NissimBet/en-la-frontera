@@ -52,11 +52,7 @@ const TopNews: React.FunctionComponent<TopNewsInterface> = ({
           <p>{descripcion}</p>
           <p>{autor}</p>
         </TextContainer>
-        <CustomLink
-          to={`https://stackoverflow.com/questions/45046030/maintaining-href-open-in-new-tab-with-an-onclick-handler-in-react`}
-        >
-          Ver más
-        </CustomLink>
+        <CustomLink to={`/News/${link}`}>Ver más</CustomLink>
       </NewsContainer>
     </Container>
   );

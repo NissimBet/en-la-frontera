@@ -16,7 +16,7 @@ const InfoContent = styled.div`
   display: flex;
   justify-content: space-evenly;
 `;
-const EstructuraNews: React.FunctionComponent = () => {
+const NoticiaNueva: React.FunctionComponent = () => {
   return (
     <div>
       <NewsContainer>
@@ -73,4 +73,4 @@ const EstructuraNews: React.FunctionComponent = () => {
   );
 };
 
-export default EstructuraNews;
+export default NoticiaNueva;

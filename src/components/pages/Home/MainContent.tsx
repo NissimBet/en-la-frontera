@@ -15,11 +15,12 @@ const Container = styled.div`
 
 const HomeMainContent: React.FunctionComponent = () => {
   const TopNewsData: TopNewsInterface = {
+    titulo: "asi nomas quedo",
     autor: "gabriel",
     descripcion: "smn",
     imagen: "/assets/SpiderSignal.jpeg",
-    titulo: "asi nomas quedo",
-    id: 1
+    id: 1,
+    link: "EstructuraNews"
   };
   return (
     <Container>
